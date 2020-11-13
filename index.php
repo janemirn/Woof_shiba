@@ -1,37 +1,26 @@
 <?php
 
-class A
-{
-    protected $X;
+include "core/EquationInterface.php";
+include "core/LogAbstract.php";
+include "core/LogInterface.php";
 
-    public function equation($a, $b)
-    {
-        return $a == 0 ? "a = 0!" : $this->X = -$b / $a;
-    }
-}
+include "barysheva/LEquation.php";
+include "barysheva/MyLog.php";
+include "barysheva/QuEquation.php";
 
-class B extends A
-{
-    protected $D;
+ini_set("display_errors", 1);
+error_reporting(-1);
 
-    protected function discriminant($a, $b, $c)
-    {
-        return $this->D = ($b *$b) -4 * $a * $c;
-    }
+$n = new barysheva\QuEquation();
+    echo "Enter 3 values" . "\n";
 
-    public function qu_equation($a, $b, $c)
-    {
-        if ($a == 0) {
-            return $this->equation($b, $c);
-        }
+    $a = readline();
+    $b = readline();
+    $c = readline();
 
-        $D = $this->discriminant($a, $b, $c);
+    barysheva\MyLog::log("You have entered the equation: " . $a . "x^2 + " . $b . "x + " . $c);
+    $x = $n->solve($a, $b, $c);
+    $str = implode(",", $x);
+    barysheva\MyLog::log("There are the roots: " . $str);
 
-        if ($D > 0) {
-            $X1 = (-$b + sqrt($D)) / (2 * $a);
-            $X2 = (-$b - sqrt($D) )/ (2 * $a);
-            return array($X1, $X2);
-        }
-        if ($D == 0) {
-            return $X1 = (-$b / 2 * $a);
-        }
+barysheva\MyLog::write();
