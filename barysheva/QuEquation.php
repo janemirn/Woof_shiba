@@ -23,7 +23,7 @@ class QuEquation extends LEquation implements EquationInterface
             return $this->X  = [(-$b / 2 * $a)];
         }
 
-        return 0;
+        throw new BaryshevaExeption("No roots");
 
     }
 

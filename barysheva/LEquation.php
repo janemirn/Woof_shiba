@@ -10,7 +10,7 @@ class LEquation
     public function l_solve($a, $b)
     {
         if ($a == 0) {
-            return null;
+            throw new BaryshevaExeption("Not valid X");
         }
 
         return $this->X =array( -$b / $a);
