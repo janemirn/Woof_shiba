@@ -2,6 +2,7 @@
 
 
 use barysheva\BaryshevaExeption;
+use barysheva\MyLog;
 
 include "core/EquationInterface.php";
 include "core/LogAbstract.php";
@@ -17,7 +18,8 @@ error_reporting(-1);
 
 $n = new barysheva\QuEquation();
 try {
-    //$values = array();
+    $version = file_get_contents('./version/version.txt');
+    MyLog::log("Версия программы: ".$version);
     echo "Enter 3 values" . "\n";
 
     $a = readline();
