@@ -19,7 +19,7 @@ error_reporting(-1);
 $n = new barysheva\QuEquation();
 try {
     //$version = file_get_contents('./version/version.txt');
-    $version = file_get_context('version.txt');
+    $version = file_get_context('version');
     MyLog::log("Версия программы: ".$version);
     echo "Enter 3 values" . "\n";
 
