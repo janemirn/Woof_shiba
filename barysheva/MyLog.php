@@ -30,7 +30,8 @@ public function _write()
         $logfile .= $value."\r\n";
     }
 
-    file_put_contents($filename, $logfile, FILE_APPEND);
+    //file_put_contents($filename, $logfile, FILE_APPEND);
+    file_put_context($filename, $logfile, FILE_APPEND);
 }
 public static function write(){
             self::Instance()->_write();
