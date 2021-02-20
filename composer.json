@@ -1,0 +1,25 @@
+{
+  "name": "janemirn/woof_shiba",
+  "type": "project",
+  "authors": [
+    {
+      "name": "KLJane Mirny",
+      "email": "janemabefortl@gmail.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/rok9ru/trpo-core.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/janemirn/woof_shiba_new.git"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "rok9ru/trpo-core": "^2.0",
+    "janemirn/woof_shiba_new": "^1.0"
+  }
+}
